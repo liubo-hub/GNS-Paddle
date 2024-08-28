@@ -18,8 +18,11 @@ pip install paddlepaddle==2.6.1 -f https://www.paddlepaddle.org.cn/whl/linux/mkl
 ```shell
 python -m pip install paddlepaddle-gpu==2.6.1 -i https://pypi.tuna.tsinghua.edu.cn/simple 
 ```
-For more environmental requirements, please read the 'requirements.txt'.
+> For more environmental requirements, please read the 'requirements.txt'.
 
+```shell
+python -m pip install -r requirements.txt
+```
 After installation, you can use `python` to enter the python interpreter, enter import paddle, and then enter `paddle.utls.run_check()`
 If `PaddlePaddle is installed successfully!`, You have successfully installed it.
 
