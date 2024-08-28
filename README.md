@@ -4,6 +4,32 @@
 
 The development and operation of SPH algorithm are realized on the AI Studio of PaddlePaddle, and the flow field data of 3D complex calculation examples are obtained. The problem of missing radius_graph function in Paddle PGL module was solved by customizing model functions, and simulation data training and prediction based on graph neural network (GNS) model framework were successfully deployed and implemented. In response to the poor learning performance of GNS in 3D SPH data, physical constraints such as edge features and mass conservation constraints were introduced to improve the accuracy of the model. After optimization, the improved GNS model exhibits excellent generalization ability, is suitable for various particle algorithms, and shows better computational accuracy and stability than the GNS model based on PyTorch in the Paddle framework.
 
+## Installation
+
+Paddle_GNS uses [paddlepaddle-gpu](https://www.paddlepaddle.org.cn/install) and [CUDA 11.8](https://developer.nvidia.com/cuda-downloads). These packages have specific requirements, please see [paddlepaddle installation]((https://www.paddlepaddle.org.cn/install) for details. 
+
+> Paddle CPU installation on Linux
+
+```shell
+pip install paddlepaddle==2.6.1 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
+```
+> Paddle GPU installation on Linux
+
+```shell
+python -m pip install paddlepaddle-gpu==2.6.1 -i https://pypi.tuna.tsinghua.edu.cn/simple 
+```
+For more environmental requirements, please read the 'requirements.txt'.
+
+After installation, you can use `python` to enter the python interpreter, enter import paddle, and then enter `paddle.utls.run_check()`
+If `PaddlePaddle is installed successfully!`, You have successfully installed it.
+
+You can use the WaterDrop dataset to check if your gns code is working correctly.
+To test on the small waterdroplet sample:
+
+```
+python train.py --data_path=.../datasets/WaterDrop/dataset/ --output_path=../datasets/WaterDrop/models/ -ntraining_steps=10
+```
+##Run
 > Training GNS/MeshNet on simulation data
 ```shell
 # For particulate domain,
@@ -33,7 +59,7 @@ python render_rollout.py --output_mode="gif" --rollout_dir="<path-containing-rol
 
 --Output mode can choose gif or vtk, where `vtk` files to visualize in ParaView.
 
-![Sand rollout](docs/img/rollout_0.gif)
+![Sand rollout](gif/fns_github1.gif)
 > GNS prediction of Sand rollout after training for 2 million steps.
 
 In mesh-based domain, the renderer writes `.gif` animation.
@@ -63,32 +89,6 @@ The dataset contains:
 }
 ```
 * npz containing data for all trajectories `(particle types, positions, global context, ...)`:
-
-## Installation
-
-Paddle_GNS uses [paddlepaddle-gpu](https://www.paddlepaddle.org.cn/install) and [CUDA 11.8](https://developer.nvidia.com/cuda-downloads). These packages have specific requirements, please see [paddlepaddle installation]((https://www.paddlepaddle.org.cn/install) for details. 
-
-> Paddle CPU installation on Linux
-
-```shell
-pip install paddlepaddle==2.6.1 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
-```
-> Paddle GPU installation on Linux
-
-```shell
-python -m pip install paddlepaddle-gpu==2.6.1 -i https://pypi.tuna.tsinghua.edu.cn/simple 
-```
-For more environmental requirements, please read the 'requirements.txt'.
-
-After installation, you can use `python` to enter the python interpreter, enter import paddle, and then enter `paddle.utls.run_check()`
-If `PaddlePaddle is installed successfully!`, You have successfully installed it.
-
-You can use the WaterDrop dataset to check if your gns code is working correctly.
-To test on the small waterdroplet sample:
-
-```
-python train.py --data_path=.../datasets/WaterDrop/dataset/ --output_path=../datasets/WaterDrop/models/ -ntraining_steps=10
-```
 
 ### Inspiration
 PyTorch version of Graph Network Simulator are based on:
