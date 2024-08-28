@@ -70,7 +70,7 @@ python render_rollout.py --output_mode="gif" --rollout_dir="<path-containing-rol
     <td align="center" width="50%">
       <img src="gif/Sand_2D.gif" alt="Sand 2D GIF" width="100%" height="auto"/>
       <br>
-      <b>paddle-GNS prediction of Sand 2D</b>
+      <b>Paddle-GNS prediction of Sand 2D</b>
     </td>
   </tr>
 </table>
