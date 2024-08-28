@@ -33,4 +33,64 @@ python render_rollout.py --output_mode="gif" --rollout_dir="<path-containing-rol
 
 --Output mode can choose gif or vtk, where `vtk` files to visualize in ParaView.
 
+![Sand rollout](docs/img/rollout_0.gif)
+> GNS prediction of Sand rollout after training for 2 million steps.
+
+In mesh-based domain, the renderer writes `.gif` animation.
+
+![Fluid flow rollout](docs/img/meshnet.gif)
+> Meshnet GNS prediction of cylinder flow after training for 1 million steps.
+
+## Datasets
+### Particulate domain:
+We use the numpy `.npz` format for storing positional data for GNS training.  The `.npz` format includes a list of tuples of arbitrary length where each tuple corresponds to a differenet training trajectory and is of the form `(position, particle_type)`.  The data loader provides `INPUT_SEQUENCE_LENGTH` positions, set equal to six by default, to provide the GNS with the last `INPUT_SEQUENCE_LENGTH` minus one positions as input to predict the position at the next time step.  The `position` is a 3-D tensor of shape `(n_time_steps, n_particles, n_dimensions)` and `particle_type` is a 1-D tensor of shape `(n_particles)`.  
+
+The dataset contains:
+
+* Metadata file with dataset information `(sequence length, dimensionality, box bounds, default connectivity radius, statistics for normalization, ...)`:
+
+```
+{
+  "bounds": [[0.1, 0.9], [0.1, 0.9]], 
+  "sequence_length": 320, 
+  "default_connectivity_radius": 0.015, 
+  "dim": 2, 
+  "dt": 0.0025, 
+  "vel_mean": [5.123277536458455e-06, -0.0009965205918140803], 
+  "vel_std": [0.0021978993231675805, 0.0026653552458701774], 
+  "acc_mean": [5.237611158734309e-07, 2.3633027988858656e-07], 
+  "acc_std": [0.0002582944917306106, 0.00029554531667679154]
+}
+```
+* npz containing data for all trajectories `(particle types, positions, global context, ...)`:
+
+## Installation
+
+Paddle_GNS uses [paddlepaddle-gpu](https://www.paddlepaddle.org.cn/install) and [CUDA 11.8](https://developer.nvidia.com/cuda-downloads). These packages have specific requirements, please see [paddlepaddle installation]((https://www.paddlepaddle.org.cn/install) for details. 
+
+> Paddle CPU installation on Linux
+
+```shell
+pip install paddlepaddle==2.6.1 -f https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html
+```
+> Paddle GPU installation on Linux
+
+```shell
+python -m pip install paddlepaddle-gpu==2.6.1 -i https://pypi.tuna.tsinghua.edu.cn/simple 
+```
+For more environmental requirements, please read the 'requirements.txt'.
+
+After installation, you can use `python` to enter the python interpreter, enter import paddle, and then enter `paddle.utls.run_check()`
+If `PaddlePaddle is installed successfully!`, You have successfully installed it.
+
+You can use the WaterDrop dataset to check if your gns code is working correctly.
+To test on the small waterdroplet sample:
+
+```
+python train.py --data_path=.../datasets/WaterDrop/dataset/ --output_path=../datasets/WaterDrop/models/ -ntraining_steps=10
+```
+
+### Inspiration
+PyTorch version of Graph Network Simulator are based on:
+* https://github.com/geoelements/gns/tree/main
 
