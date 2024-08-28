@@ -93,7 +93,7 @@ python render_rollout.py --output_mode="gif" --rollout_dir="<path-containing-rol
   </tr>
 </table>
 
-* Comparison of Loss Trains for Pytorch and Paddle in the Same Example
+* Comparison of Loss trains for Pytorch and Paddle in the Same Example
 
 <p align="center">
   <img src="gif/Loss_con.png" width="100%" height="100%" />
