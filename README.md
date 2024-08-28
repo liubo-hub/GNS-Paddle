@@ -57,9 +57,9 @@ python train.py --mode="rollout" --data_path="<input-data-path>" --model_path="<
 python render_rollout.py --output_mode="gif" --rollout_dir="<path-containing-rollout-file>" --rollout_name="<name-of-rollout-file>"
 ```
 
---Output mode can choose gif or vtk, where `vtk` files to visualize in ParaView.
+'--output_mode' can choose gif or vtk, where `vtk` files to visualize in ParaView.
 
-![Sand rollout](GNS-Paddle/gif/fns_github1.gif)
+![Sand rollout](gif/gns_github1.gif)
 > GNS prediction of Sand rollout after training for 2 million steps.
 
 In mesh-based domain, the renderer writes `.gif` animation.
