@@ -62,7 +62,7 @@ python render_rollout.py --output_mode="gif" --rollout_dir="<path-containing-rol
 
 '--output_mode' can choose gif or vtk, where `vtk` files to visualize in ParaView.
 
-> Predict result after training for 1 million steps.
+* Predict result after training for 1 million steps.
 <table width="100%">
   <tr>
     <td align="center" width="50%">
@@ -92,6 +92,12 @@ python render_rollout.py --output_mode="gif" --rollout_dir="<path-containing-rol
     </td>
   </tr>
 </table>
+
+* Comparison of Loss Trains for Pytorch and Paddle in the Same Example
+
+<p align="center">
+  <img src="gif/Loss_con.png" width="100%" height="100%" />
+</p>
 
 
 ## Datasets
