@@ -63,7 +63,7 @@ python render_rollout.py --output_mode="gif" --rollout_dir="<path-containing-rol
 <table>
   <tr>
     <td align="center">
-      <img src="gif/Water_3D.gif" alt="Water 3D GIF" height="100%" width="100%"/>
+      <img src="gif/Water_3D.gif" alt="Water 3D GIF" height="100%" width="90%"/>
       <br>
       <b>Paddle-GNS prediction of Water 3D.</b>
     </td>
