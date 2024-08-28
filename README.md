@@ -59,24 +59,33 @@ python render_rollout.py --output_mode="gif" --rollout_dir="<path-containing-rol
 
 '--output_mode' can choose gif or vtk, where `vtk` files to visualize in ParaView.
 
-![Water_3D](gif/Water_3D.gif)
-> GNS prediction of Sand rollout after training for 2 million steps.
-
-In mesh-based domain, the renderer writes `.gif` animation.
-
-![Sand_2D](gif/Sand_2D.gif)
-> Meshnet GNS prediction of cylinder flow after training for 1 million steps.
+> Predict result after training for 1 million steps.
 <table>
   <tr>
     <td align="center">
-      <img src="gif/Water_3D.gif" alt="Water 3D GIF" width="400"/>
+      <img src="gif/Water_3D.gif" alt="Water 3D GIF" width="450"/>
       <br>
-      <b>GNS prediction of Sand rollout after training for 2 million steps.</b>
+      <b>Paddle-GNS prediction of Water 3D.</b>
     </td>
     <td align="center">
-      <img src="gif/Sand_2D.gif" alt="Sand 2D GIF" width="400"/>
+      <img src="gif/Sand_2D.gif" alt="Sand 2D GIF" width="450"/>
       <br>
-      <b>Meshnet GNS prediction of cylinder flow after training for 1 million steps.</b>
+      <b>paddle-GNS prediction of Sand 2D.</b>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="gif/Goop_3D.gif" alt="Goop 3D GIF" width="450"/>
+      <br>
+      <b>Paddle-GNS prediction of Goop 3D.</b>
+    </td>
+    <td align="center">
+      <img src="gif/Water_Sand_Goop_2D.gif" alt="Water Sand Goop 2D GIF" width="450"/>
+      <br>
+      <b>Paddle-GNS prediction of Water Sand Goop 2D.</b>
     </td>
   </tr>
 </table>
