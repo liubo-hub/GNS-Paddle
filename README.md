@@ -60,35 +60,36 @@ python render_rollout.py --output_mode="gif" --rollout_dir="<path-containing-rol
 '--output_mode' can choose gif or vtk, where `vtk` files to visualize in ParaView.
 
 > Predict result after training for 1 million steps.
-<table>
+<table width="100%">
   <tr>
-    <td align="center">
-      <img src="gif/Water_3D.gif" alt="Water 3D GIF" height="100%" width="100%"/>
+    <td align="center" width="50%">
+      <img src="gif/Water_3D.gif" alt="Water 3D GIF" width="100%" height="auto"/>
       <br>
       <b>Paddle-GNS prediction of Water 3D</b>
     </td>
-    <td align="center">
-      <img src="gif/Sand_2D.gif" alt="Sand 2D GIF" height="100%" width="100%"/>
+    <td align="center" width="50%">
+      <img src="gif/Sand_2D.gif" alt="Sand 2D GIF" width="100%" height="auto"/>
       <br>
       <b>paddle-GNS prediction of Sand 2D</b>
     </td>
   </tr>
 </table>
 
-<table>
+<table width="100%">
   <tr>
-    <td align="center">
-      <img src="gif/Goop_3D.gif" alt="Goop 3D GIF" height="100%" width="100%"/>
+    <td align="center" width="50%">
+      <img src="gif/Goop_3D.gif" alt="Goop 3D GIF" width="100%" height="auto"/>
       <br>
       <b>Paddle-GNS prediction of Goop 3D</b>
     </td>
-    <td align="center">
-      <img src="gif/Water_Sand_Goop_2D.gif" alt="Water Sand Goop 2D GIF" height="100%" width="100%"/>
+    <td align="center" width="50%">
+      <img src="gif/Water_Sand_Goop_2D.gif" alt="Water Sand Goop 2D GIF" width="100%" height="auto"/>
       <br>
       <b>Paddle-GNS prediction of Water Sand Goop 2D</b>
     </td>
   </tr>
 </table>
+
 
 ## Datasets
 ### Particulate domain:
