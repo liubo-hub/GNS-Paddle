@@ -29,7 +29,7 @@ To test on the small waterdroplet sample:
 ```
 python train.py --data_path=.../datasets/WaterDrop/dataset/ --output_path=../datasets/WaterDrop/models/ -ntraining_steps=10
 ```
-##Run
+## Run
 > Training GNS/MeshNet on simulation data
 ```shell
 # For particulate domain,
@@ -59,7 +59,7 @@ python render_rollout.py --output_mode="gif" --rollout_dir="<path-containing-rol
 
 --Output mode can choose gif or vtk, where `vtk` files to visualize in ParaView.
 
-![Sand rollout](gif/fns_github1.gif)
+![Sand rollout](GNS-Paddle/gif/fns_github1.gif)
 > GNS prediction of Sand rollout after training for 2 million steps.
 
 In mesh-based domain, the renderer writes `.gif` animation.
