@@ -59,12 +59,12 @@ python render_rollout.py --output_mode="gif" --rollout_dir="<path-containing-rol
 
 '--output_mode' can choose gif or vtk, where `vtk` files to visualize in ParaView.
 
-![Sand rollout](gif/gns_github1.gif)
+![Water_3D](gif/Water_3D.gif)
 > GNS prediction of Sand rollout after training for 2 million steps.
 
 In mesh-based domain, the renderer writes `.gif` animation.
 
-![Fluid flow rollout](docs/img/meshnet.gif)
+![Sand_2D](gif/Sand_2D.gif)
 > Meshnet GNS prediction of cylinder flow after training for 1 million steps.
 
 ## Datasets
