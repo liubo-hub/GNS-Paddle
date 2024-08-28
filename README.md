@@ -66,6 +66,20 @@ In mesh-based domain, the renderer writes `.gif` animation.
 
 ![Sand_2D](gif/Sand_2D.gif)
 > Meshnet GNS prediction of cylinder flow after training for 1 million steps.
+<table>
+  <tr>
+    <td align="center">
+      <img src="gif/Water_3D.gif" alt="Water 3D GIF" width="400"/>
+      <br>
+      <b>GNS prediction of Sand rollout after training for 2 million steps.</b>
+    </td>
+    <td align="center">
+      <img src="gif/Sand_2D.gif" alt="Sand 2D GIF" width="400"/>
+      <br>
+      <b>Meshnet GNS prediction of cylinder flow after training for 1 million steps.</b>
+    </td>
+  </tr>
+</table>
 
 ## Datasets
 ### Particulate domain:
